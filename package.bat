@@ -1,0 +1,1 @@
+pyinstaller main.py --name fuckingfast-download-manager
