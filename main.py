@@ -75,14 +75,11 @@ for entry in os.scandir(download_path):
 
     local_file_names.append(entry.name)
 
-idx = 0
 for local_file_name in local_file_names:
     potential_duplicate = "(" in local_file_name and ").rar" in local_file_name
     if (".crdownload" in local_file_name or potential_duplicate):
         print("Removing " + local_file_name)
         os.remove(download_path + "/" + local_file_name)
-        del local_file_names[idx]
-    idx = idx + 1
 
 # idx = 0
 # for local_file_name in local_file_names:
