@@ -80,19 +80,6 @@ for local_file_name in local_file_names:
     if (".crdownload" in local_file_name or potential_duplicate):
         print("Removing " + local_file_name)
         os.remove(download_path + "/" + local_file_name)
-
-# idx = 0
-# for local_file_name in local_file_names:
-#     try:
-#         if local_file_name in file_names:
-#             print("Skipping " + file_names[idx])
-#             del file_names[idx]
-#             del filtered_links[idx]
-#             continue
-#     except:
-#         break
-#     idx = idx + 1
-
 link_idx = 0
 while (True):
     if (link_idx >= len(file_names)):
