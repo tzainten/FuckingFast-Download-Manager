@@ -79,18 +79,19 @@ idx = 0
 for local_file_name in local_file_names:
     potential_duplicate = "(" in local_file_name and ").rar" in local_file_name
     if (".crdownload" in local_file_name or potential_duplicate):
+        print("Removing " + local_file_name)
         os.remove(download_path + "/" + local_file_name)
         del local_file_names[idx]
-        continue
     idx = idx + 1
 
 idx = 0
 for local_file_name in local_file_names:
     try:
         if local_file_name in file_names:
-            print("Skipping" + file_names[idx])
+            print("Skipping " + file_names[idx])
             del file_names[idx]
             del filtered_links[idx]
+            continue
     except:
         break
     idx = idx + 1
