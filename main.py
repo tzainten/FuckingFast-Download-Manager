@@ -84,20 +84,26 @@ for local_file_name in local_file_names:
         del local_file_names[idx]
     idx = idx + 1
 
-idx = 0
-for local_file_name in local_file_names:
-    try:
-        if local_file_name in file_names:
-            print("Skipping " + file_names[idx])
-            del file_names[idx]
-            del filtered_links[idx]
-            continue
-    except:
-        break
-    idx = idx + 1
+# idx = 0
+# for local_file_name in local_file_names:
+#     try:
+#         if local_file_name in file_names:
+#             print("Skipping " + file_names[idx])
+#             del file_names[idx]
+#             del filtered_links[idx]
+#             continue
+#     except:
+#         break
+#     idx = idx + 1
 
 link_idx = 0
 while (True):
+    file_name = file_names[link_idx]
+    if (file_name in local_file_names):
+        print("Skipping " + file_name)
+        link_idx = link_idx + 1
+        continue
+
     child_driver = webdriver.Chrome(options=options)
     child_driver.get(filtered_links[link_idx])
 
