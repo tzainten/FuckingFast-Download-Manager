@@ -81,10 +81,13 @@ for local_file_name in local_file_names:
         os.remove(download_path + "/" + local_file_name)
         continue
 
-    if local_file_name in file_names:
-        print("Skipping " + file_names[idx])
-        del file_names[idx]
-        del filtered_links[idx]
+    try:
+        if local_file_name in file_names:
+            print("Skipping " + file_names[idx])
+            del file_names[idx]
+            del filtered_links[idx]
+    except:
+        break
     idx = idx + 1
 
 link_idx = 0
