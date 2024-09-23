@@ -95,6 +95,9 @@ for local_file_name in local_file_names:
 
 link_idx = 0
 while (True):
+    if (link_idx >= len(file_names)):
+        break
+    
     file_name = file_names[link_idx]
     if (file_name in local_file_names):
         print("Skipping " + file_name)
