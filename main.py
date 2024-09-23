@@ -84,6 +84,7 @@ for local_file_name in local_file_names:
         continue
     idx = idx + 1
 
+idx = 0
 for local_file_name in local_file_names:
     try:
         if local_file_name in file_names:
